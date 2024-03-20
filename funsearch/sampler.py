@@ -22,6 +22,7 @@ import numpy as np
 from funsearch import evaluator
 from funsearch import programs_database
 
+from funsearch import myllm
 
 class LLM:
   """Language model that predicts continuation of provided source code."""
@@ -34,7 +35,9 @@ class LLM:
 
   def _draw_sample(self, prompt: str) -> str:
     """Returns a predicted continuation of `prompt`."""
-    response = self.model.prompt(prompt)
+    # response = self.model.prompt(prompt)
+    # TODO: 检查一下这个函数的prompt的加入是否正确
+    response = myllm.prompt(prompt)
     self._log(prompt, response, self.prompt_count)
     self.prompt_count += 1
     return response
