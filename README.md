@@ -21,7 +21,14 @@ podman run -it -v ./data:/workspace/data funsearch
 funsearch run examples/cap_set_spec.py 11 --sandbox_type ExternalProcessSandbox
 ```
 
+or
 
+```
+docker build . -t funsearch
+mkdir data
+docker run -it -v $(pwd)/data:/workspace/data funsearch
+funsearch run examples/cap_set_spec.py 11 --sandbox_type ExternalProcessSandbox
+```
 
 In here we are searching for the algorithm to find maximum cap sets for dimension 11.
 You should see output something like
