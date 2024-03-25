@@ -1,8 +1,8 @@
 """Finds large cap sets.
 
 On every iteration, improve priority_v1 over the priority_vX methods from previous iterations.
-Make only small changes.
 Try to make the code short.
+Avoid adding random noise to your function.
 """
 import itertools
 
@@ -48,5 +48,7 @@ def solve(n: int) -> np.ndarray:
 def priority(el: tuple[int, ...], n: int) -> float:
   """Returns the priority with which we want to add `element` to the cap set.
   el is a tuple of length n with values 0-2.
+  Don't return same priority for every elemnt.
+  Just return the function
   """
   return 0.0
